@@ -988,14 +988,14 @@
       });
     </script>
   </body>
-  <!-- 职业问答助手模块 -->
+ <!-- 职业问答助手模块 -->
 <style>
 #chatbot {
   position: fixed;
   top: 20px;
   right: 20px;
   width: 320px;
-  background: white;
+  background: #f5fdf5;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -1003,7 +1003,7 @@
   z-index: 9999;
 }
 #chatbot-header {
-  background-color: #007BFF;
+  background-color: #5cb85c;
   color: white;
   padding: 10px;
   border-top-left-radius: 10px;
@@ -1022,7 +1022,7 @@
 }
 .chatbot-user {
   text-align: right;
-  color: #007BFF;
+  color: #5cb85c;
 }
 .chatbot-bot {
   text-align: left;
@@ -1040,7 +1040,7 @@
 }
 #chatbot-input button {
   padding: 8px 12px;
-  background-color: #007BFF;
+  background-color: #5cb85c;
   color: white;
   border: none;
   border-bottom-right-radius: 10px;
@@ -1075,7 +1075,7 @@ document.getElementById("chatbot-question").addEventListener("keydown", function
 function getChatbotReply(question) {
   question = question.toLowerCase();
   if (question.includes("性格") || question.includes("mbti") || question.includes("测试")) {
-    return `<div style='border:1px solid #007BFF; border-radius:8px; padding:12px; background:#f0f8ff'>
+    return `<div style='border:1px solid #5cb85c; border-radius:8px; padding:12px; background:#f5fdf5'>
       <b>🧠 想了解自己的性格类型吗？</b><br>
       👉 推荐使用 <a href='https://www.xinli001.com/ceshi/MBTI/' target='_blank'>壹心理 MBTI 性格测试</a><br>
       或 <a href='https://www.16personalities.com/zh' target='_blank'>16型人格职业测试</a><br><br>
@@ -1084,28 +1084,28 @@ function getChatbotReply(question) {
   } else if (question.includes("转专业") || question.includes("换方向")) {
     return "转专业建议结合你的兴趣、当前学科背景与目标方向，同时了解本校和目标专业的转入条件。建议提前咨询辅导员或教务老师～";
   } else if (question.includes("画") || question.includes("美术")) {
-    return `<div style='border:1px solid #ddd; border-radius:8px; padding:10px; background:#f9f9f9'>
+    return `<div style='border:1px solid #ddd; border-radius:8px; padding:10px; background:#f5fdf5'>
       <b>🎓 专业推荐：视觉传达设计</b><br>
       📚 简介：学习图形设计、UI 设计、品牌设计等视觉艺术表达形式<br>
       🎯 就业方向：设计公司、广告传媒、互联网公司、自由插画师<br>
       🏫 推荐院校：中央美术学院、中国传媒大学、广州美术学院
     </div>`;
   } else if (question.includes("计算机")) {
-    return `<div style='border:1px solid #ddd; border-radius:8px; padding:10px; background:#f9f9f9'>
+    return `<div style='border:1px solid #ddd; border-radius:8px; padding:10px; background:#f5fdf5'>
       <b>💻 专业推荐：计算机科学与技术</b><br>
       📚 简介：学习编程语言、算法、操作系统、人工智能等<br>
       🎯 就业方向：软件开发、算法工程师、AI、前端/后端工程师等<br>
       🏫 推荐院校：清华大学、北京大学、北京科技大学
     </div>`;
   } else if (question.includes("文科") || question.includes("语文") || question.includes("历史")) {
-    return `<div style='border:1px solid #ddd; border-radius:8px; padding:10px; background:#f9f9f9'>
+    return `<div style='border:1px solid #ddd; border-radius:8px; padding:10px; background:#f5fdf5'>
       <b>📖 专业推荐：新闻传播 / 教育类</b><br>
       📚 简介：注重人文素养与表达能力的培养<br>
       🎯 就业方向：记者、教师、公务员、编辑、宣传策划等<br>
       🏫 推荐院校：中国人民大学、北京师范大学、复旦大学
     </div>`;
   } else if (question.includes("考研") || question.includes("升学")) {
-    return `<div style='border:1px solid #ddd; border-radius:8px; padding:10px; background:#f9f9f9'>
+    return `<div style='border:1px solid #ddd; border-radius:8px; padding:10px; background:#f5fdf5'>
       <b>📚 考研方向建议</b><br>
       🎯 热门方向：计算机、金融、教育、心理学、法学<br>
       🧠 建议：选择熟悉且感兴趣的学科，准备时间建议 1-1.5 年<br>
@@ -1116,9 +1116,67 @@ function getChatbotReply(question) {
   } else if (question.includes("内向")) {
     return "内向型同学适合专注型工作，如程序员、数据分析师、编辑、研究员等，不用频繁社交也能做出成绩 👍";
   } else if (question.includes("外向")) {
+  } else if (question.includes("写作") || question.includes("讲故事") || question.includes("小说")) {
+    return `<div style='border:1px solid #5cb85c; border-radius:8px; padding:10px; background:#f5fdf5'>
+      <b>📝 推荐专业方向：</b> 中文、新闻传播、戏剧影视文学<br><br>
+      <b>📚 核心课程：</b> 新闻采写与编辑、叙事写作、传播学、剧本创作、文艺评论等<br><br>
+      <b>📺 就业方向：</b> 媒体机构、出版社、影视公司、自媒体平台<br><br>
+      <b>🏢 代表企业：</b> 人民日报社、央视网、字节跳动、阅文集团
+    </div>`;
+  } else if (question.includes("拍视频") || question.includes("剪辑") || question.includes("做内容")) {
+    return `<div style='border:1px solid #5cb85c; border-radius:8px; padding:10px; background:#f5fdf5'>
+      <b>🎬 推荐专业方向：</b> 广播电视编导、数字媒体艺术、新媒体技术<br><br>
+      <b>📚 核心课程：</b> 摄影摄像、视频剪辑、传播心理学、导演基础、视听语言等<br><br>
+      <b>📺 就业方向：</b> 短视频制作、自媒体、品牌营销、内容运营<br><br>
+      <b>🏢 代表企业：</b> 抖音、快手、哔哩哔哩、小红书、网易传媒
+    </div>`;
+  } else if (question.includes("社交") || question.includes("表达") || question.includes("沟通")) {
+    return `<div style='border:1px solid #5cb85c; border-radius:8px; padding:10px; background:#f5fdf5'>
+      <b>🗣️ 推荐专业方向：</b> 市场营销、人力资源管理、公共关系学、工商管理<br><br>
+      <b>📚 核心课程：</b> 商务沟通、人际关系管理、消费者心理学、谈判技巧、市场调研等<br><br>
+      <b>💼 就业方向：</b> 公关传播、品牌管理、人力资源、销售、客户关系管理等<br><br>
+      <b>🏢 代表企业：</b> 腾讯、宝洁、猎聘网、京东零售、麦肯光明
+    </div>`;
+  } else if (question.includes("打游戏") || question.includes("玩游戏") || question.includes("动漫")) {
+    return `<div style='border:1px solid #5cb85c; border-radius:8px; padding:10px; background:#f5fdf5'>
+      <b>🎮 推荐专业方向：</b> 动画、数字媒体技术、游戏设计、互动艺术<br><br>
+      <b>📚 核心课程：</b> 游戏设计基础、三维建模、原画手绘、游戏引擎、交互设计等<br><br>
+      <b>🕹️ 就业方向：</b> 游戏策划、原画设计、视觉开发、产品运营、动画制作<br><br>
+      <b>🏢 代表企业：</b> 米哈游、腾讯游戏、网易雷火、完美世界、莉莉丝
+    </div>`;
+
+  } else if (question.includes("做实验") || question.includes("实验") || question.includes("动手") || question.includes("研究")) {
+    return `<div style='border:1px solid #5cb85c; border-radius:8px; padding:10px; background:#f5fdf5'>
+      <b>🧪 推荐专业方向：</b> 生物科学、化学工程与工艺、材料科学与工程<br><br>
+      <b>📚 核心课程：</b> 有机化学、生物实验技术、分析化学、材料性能测试、实验数据处理等<br><br>
+      <b>🏭 就业方向：</b> 科研机构、药企研发、化工材料、新能源、生物技术等领域<br><br>
+      <b>🏢 代表企业：</b> 中国科学院系统、华大基因、药明康德、恒瑞医药、比亚迪材料研究院
+    </div>`;
+
     return "你适合与人沟通频繁的岗位，如市场、公关、销售、讲师、主持人等职业～";
+  } else if (question.includes("estj")) {
+    return `<div style='border:1px solid #aaa; border-radius:8px; padding:10px; background:#f5fdf5'>
+      <b>🧬 MBTI类型：ESTJ</b><br>
+      🎯 特点：踏实严谨、执行力强、逻辑清晰，擅长组织和管理<br>
+      🎓 推荐专业：工商管理、财务管理、法学、行政管理、工程管理<br>
+      🏢 推荐方向：项目经理、企业管理、公务员、律师、工程管理人员
+    </div>`;
+  } else if (question.includes("infj")) {
+    return `<div style='border:1px solid #aaa; border-radius:8px; padding:10px; background:#f5fdf5'>
+      <b>🧬 MBTI类型：INFJ</b><br>
+      🎯 特点：理想主义、有洞察力、喜欢深度思考和帮助他人<br>
+      🎓 推荐专业：心理学、社会工作、教育学、中文、艺术设计<br>
+      🌱 推荐方向：心理咨询师、教师、策划人、作家、设计师
+    </div>`;
+  } else if (question.includes("intp")) {
+    return `<div style='border:1px solid #aaa; border-radius:8px; padding:10px; background:#f5fdf5'>
+      <b>🧬 MBTI类型：INTP</b><br>
+      🎯 特点：逻辑理性、思想独立、喜欢探索复杂概念<br>
+      🎓 推荐专业：计算机科学、数学、物理、哲学、人工智能<br>
+      🔬 推荐方向：科研人员、程序员、算法工程师、大学讲师
+    </div>`;
   } else if (question.includes("赚钱") || question.includes("高薪") || question.includes("收入")) {
-    return `<div style='border:1px solid #ddd; border-radius:8px; padding:10px; background:#f9f9f9'>
+    return `<div style='border:1px solid #ddd; border-radius:8px; padding:10px; background:#f5fdf5'>
       <b>💰 高薪热门方向</b><br>
       🔥 专业：人工智能、金融工程、计算机、口腔医学<br>
       📈 行业：互联网、大数据、证券投资、医疗健康<br>
